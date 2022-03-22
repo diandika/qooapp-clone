@@ -1,3 +1,28 @@
+.qoo-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: block;
+  background-color: #00c6e6;
+  color: white;
+  white-space: nowrap;
+  padding: 10px 50px;
+}
+
+#root {
+  background-color: #eee;
+}
+
+.qoo-logo {
+  height: 52px;
+}
+
+.qoo-feed {
+  padding-top: 68px;
+}
+
 .App {
   text-align: center;
 }
