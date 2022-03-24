@@ -13,6 +13,12 @@
     margin: 10px;
 }
 
+.user-name {
+    color: #00c6e6;
+    font-size: 16px;
+    font-weight: 700;
+}
+
 .post-content {
     margin: 10px;
 }

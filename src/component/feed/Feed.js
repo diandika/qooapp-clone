@@ -4,7 +4,9 @@ import PostComponent from "./Post";
 export default class FeedComponent extends React.Component {
     constructor(props){
         super(props);
-        this.state = {};
+        this.state = {
+            click: this.props.click
+        };
     }
 
     async componentDidMount(){
@@ -12,18 +14,19 @@ export default class FeedComponent extends React.Component {
                         .then(response => response.json())
                         .then(json => {return json});
 
-        console.log(postList);
+        // console.log(postList);
+        for (var post in postList){
+            postList[post].id = post;
+        }
         this.setState({
             "data": postList
         });
     }
 
-    
-
     render(){
         return (
             <div>
-                {this.state.data != null ? <PostComponent data={this.state.data} /> : <p>loading</p>}
+                {this.state.data != null ? <PostComponent click={this.state.click} data={this.state.data} /> : <p>loading</p>}
             </div>
         );
     }

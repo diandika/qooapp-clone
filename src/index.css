@@ -6,6 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #eee;
+  font-family: Nunito,Lato,"Avenir Next",Avenir,Helvetica,"Microsoft YaHei",Arial,sans_serif;
+}
+
+#root {
+  padding: 10px;
 }
 
 code {
