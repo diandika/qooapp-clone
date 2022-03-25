@@ -2,17 +2,35 @@
     margin: auto;
     justify-content: space-around;
     height: 50%;
+    height: 300px;
     text-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
-.user-profile > img {
+.user-profile {
+    background-image: url(https://apkmodo.net/wp-content/uploads/2021/12/QooApp-APK.gif);
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.user-profile img {
+    position: absolute;
+    align-self: center;
+    vertical-align: middle;
     margin: auto;
     height: 100px;
     width: 100px;
 }
 
-.user > .user-name {
-    color: #00c6e6;
+.user-profile .user-name {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    color: #ee06e6;
     font-size: 16px;
     font-weight: 700;
 }

@@ -2,8 +2,9 @@
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import FeedComponent from './component/feed/Feed';
-import React, { useState } from 'react';
+import React from 'react';
 import User from './component/user/User';
+import SinglePostComponent from './component/post/SinglePost';
 
 
 class App extends React.Component {
@@ -15,11 +16,19 @@ class App extends React.Component {
   }
 
   click = pageName => {
-    console.log(pageName.target.innerText);
-    this.setState({
-      page: pageName.target.getAttribute('value'),
-      username: pageName.target.innerText
-    });
+    if (pageName.target.getAttribute('value') === "user-profile"){
+      this.setState({
+        page: pageName.target.getAttribute('value'),
+        username: pageName.target.innerText
+      });
+    } else if (pageName.target.getAttribute('value') === "post") {
+      // console.log(pageName.target.getAttribute('data').id);
+      console.log(pageName.target.getAttribute('data'));
+      this.setState({
+        page: pageName.target.getAttribute('value'),
+        data: JSON.parse(pageName.target.getAttribute('data'))
+      })
+    }
   }
 
   selectPage = () => {
@@ -28,6 +37,8 @@ class App extends React.Component {
         return <FeedComponent click={this.click} />
       case "user-profile":
         return <User name={this.state.username} click={this.click} />
+      case "post":
+        return <SinglePostComponent click={this.state.click} data={this.state.data} />
       default:
         return <FeedComponent click={this.click} />
     }
