@@ -10,7 +10,13 @@ export default class FeedComponent extends React.Component {
     }
 
     async componentDidMount(){
-        var postList = await fetch('https://animechan.vercel.app/api/quotes')
+        var url = "";
+        if (this.props.user == null){
+            url = 'https://animechan.vercel.app/api/quotes';
+        } else {
+            url = 'https://animechan.vercel.app/api/quotes/character?name=' + this.props.user;
+        }
+        var postList = await fetch(url)
                         .then(response => response.json())
                         .then(json => {return json});
 

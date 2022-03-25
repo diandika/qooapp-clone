@@ -1,0 +1,18 @@
+.user-header {
+    margin: auto;
+    justify-content: space-around;
+    height: 50%;
+    text-align: center;
+}
+
+.user-profile > img {
+    margin: auto;
+    height: 100px;
+    width: 100px;
+}
+
+.user > .user-name {
+    color: #00c6e6;
+    font-size: 16px;
+    font-weight: 700;
+}

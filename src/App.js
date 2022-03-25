@@ -15,9 +15,10 @@ class App extends React.Component {
   }
 
   click = pageName => {
-    console.log(pageName.target.getAttribute('value'));
+    console.log(pageName.target.innerText);
     this.setState({
-      page: pageName.target.getAttribute('value')
+      page: pageName.target.getAttribute('value'),
+      username: pageName.target.innerText
     });
   }
 
@@ -26,7 +27,7 @@ class App extends React.Component {
       case "feed":
         return <FeedComponent click={this.click} />
       case "user-profile":
-        return <User click={this.click} />
+        return <User name={this.state.username} click={this.click} />
       default:
         return <FeedComponent click={this.click} />
     }
@@ -36,7 +37,7 @@ class App extends React.Component {
     return (
       <div className="container qoo-container">
         <div className="qoo-header">
-          <img className="qoo-logo" src="https://o.qoo-img.com/statics.qoo-static.com/cdn/img/icon.v-ab0842.png" alt="QooApp"/>  
+          <img value={"feed"} onClick={this.click} className="qoo-logo" src="https://o.qoo-img.com/statics.qoo-static.com/cdn/img/icon.v-ab0842.png" alt="QooApp"/>  
           <sub>English</sub>
           {/* <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
