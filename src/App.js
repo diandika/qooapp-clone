@@ -28,6 +28,10 @@ class App extends React.Component {
         page: pageName.target.getAttribute('value'),
         data: JSON.parse(pageName.target.getAttribute('data'))
       })
+    } else if (pageName.target.getAttribute('value') === "feed") {
+      this.setState({
+        page: pageName.target.getAttribute('value')
+      })
     }
   }
 
@@ -50,20 +54,6 @@ class App extends React.Component {
         <div className="qoo-header">
           <img value={"feed"} onClick={this.click} className="qoo-logo" src="https://o.qoo-img.com/statics.qoo-static.com/cdn/img/icon.v-ab0842.png" alt="QooApp"/>  
           <sub>English</sub>
-          {/* <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header> */}
         </div>
         <div className="qoo-ntent">
           {this.selectPage(this.state.page)}
